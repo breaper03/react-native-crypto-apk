@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { Text, View, StyleSheet } from 'react-native'
 import EStyleSheet from 'react-native-extended-stylesheet'
 
 import theme from "../theme.js"
@@ -31,10 +31,11 @@ const StyledText = ({
     color === "black" && styles.black,
     color === "red" && styles.red,
     color === "green" && styles.green,
+    color === "gray" && styles.gray,
   ]
 
   return (
-    <Text style={textStyles} {...restOfProps}>
+    <Text style={textStyles} {...restOfProps} >
       {children}
     </Text>
   )
@@ -42,7 +43,7 @@ const StyledText = ({
 
 export default StyledText
 
-const styles = EStyleSheet.create({
+const styles = StyleSheet.create({
   // Size
   xxs: {
     fontSize: theme.fontSize.xxs,
@@ -74,19 +75,19 @@ const styles = EStyleSheet.create({
 
   // Weight
   extraLight: {
-    fontWeight: theme.fontWeight.extraLight
+    fontWeight: '400'
   },
   light: {
-    fontWeight: theme.fontWeight.light
+    fontWeight: '500'
   },
   normal: {
-    fontWeight: theme.fontWeight.normal
+    fontWeight: '600'
   },
   bold: {
-    fontWeight: theme.fontWeight.bold
+    fontWeight:'700'
   },
   extraBold: {
-    fontWeight: theme.fontWeight.extraBold
+    fontWeight: '800'
   },
 
   // Colors
@@ -105,4 +106,7 @@ const styles = EStyleSheet.create({
   green: {
     color: theme.colors.green,
   },
+  gray: {
+    color: theme.colors.gray
+  }
 })
